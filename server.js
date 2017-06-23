@@ -5,25 +5,14 @@ var express        = require('express');
 var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
-var mongoose	   = require('mongoose');
 
 // configuration ===========================================
-
-// config files
-var db = require('./config/db');
 
 // set our port
 var port = process.env.PORT || 8080; 
 
-// connect to our mongoDB database 
-// (uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect(db.url); 
-
-// @Jayz
-//Get the default connection
-//var db = mongoose.connection;
-//Bind connection to error event (to get notification of connection errors)
-//db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// initialize database
+require('./app/initDB');
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
