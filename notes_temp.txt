@@ -1,0 +1,15 @@
+
+using node@v6.10.3
+
+On /bson error:
+npm install node-gyp -g
+npm cache clean
+rm -rf node_modules
+npm install
+
+
+C:\Program Files\MongoDB\Server\3.4\bin>
+mongod.exe --dbpath C:\Users\jayzt_000\Desktop\app\data
+
+C:\Program Files\MongoDB\Server\3.4\bin>
+mongo.exe

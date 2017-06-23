@@ -2,9 +2,12 @@
 // app/routes.js
 
 // grab the database models
-var Dish = require('./models/dish');
-var Order = require('./models/order');
+var Customer = require('./models/customer');
 var User = require('./models/user');
+var Category = require('./models/category');
+var MenuItem = require('./models/menuItem');
+var OrderItem = require('./models/orderItem');
+var Order = require('./models/order');
 
 var tempCount = 0;
 
