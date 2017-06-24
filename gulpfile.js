@@ -23,7 +23,7 @@ gulp.task('default', ['browser-sync'], function() {
 gulp.task('browser-sync', ['nodemon'], function() {
     browserSync.init(null, {
         baseDir: 'public/',
-        proxy: "http://localhost:8082", // port of node server
+        proxy: "http://localhost:8080", // port of node server
     });
 });
 
