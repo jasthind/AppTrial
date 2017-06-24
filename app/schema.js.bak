@@ -1,0 +1,77 @@
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+// Customers
+var customerSchema = Schema({
+	firstname	: String,
+	lastname	: String,
+	email		: String,
+	password	: String,
+	phone		: Number,
+	location	: String
+});
+var customer  = mongoose.model('customer', customerSchema);
+
+// Users
+var userSchema = Schema({
+	firstname	: String,
+	lastname	: String,
+	email		: String,
+	password	: String,
+	phone		: Number,
+	role		: String
+})
+var user = mongoose.model('user', userSchema);
+
+
+// Menu Categaories
+var categorySchema = Schema({
+    name 		: { type : String},
+    description : { type : String, default : ''},
+    img			: String
+});
+var category  = mongoose.model('category', categorySchema);
+
+// Menu Items
+var menuSchema = Schema({
+    name 		: { type : String},
+    price 		: Double,
+    description : { type : String, default : ''}
+	category	: String,
+	daysofweek	: { type : Array},
+    img 		: String
+});
+var menuItem  = mongoose.model('menuitem', menuSchema);
+
+// Ordered Menu items
+var orderItemSchema = Schema({
+	menuitem 	: String,
+	order		: String,
+	quantity	: Number,
+	price 		: Double
+});
+var orderItem = mongoose.model('orderitem', orderItemSchema);
+
+
+// Order
+var orderSchema = Schema({
+	orderitems 		: Array,
+	customer 		: String,
+	invoice			: Number,
+	total_price		: Double,
+	details			: String,
+	order_placed_date	: Date,
+	order_deliver_date	: Date,
+	order_status	: String
+});
+var order = mongoose.model('order', orderSchema);
+
+module.exports = {
+	customer,
+	user,
+	category,
+	menuItem,
+	orderItem,
+	order
+}

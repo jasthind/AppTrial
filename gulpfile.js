@@ -6,9 +6,9 @@ var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
 
 gulp.task('default', ['browser-sync'], function() {
-    gulp.watch('./public/**/*.html', reload);
-    gulp.watch('./public/**/*.js', reload);
-    gulp.watch('./public/**/*.css', reload);
+    gulp.watch('**/*.html', reload);
+    gulp.watch('**/*.js', reload);
+    gulp.watch('**/*.css', reload);
 });
 
 /*gulp.task('browserSync', function () {

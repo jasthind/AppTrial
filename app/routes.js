@@ -2,9 +2,12 @@
 // app/routes.js
 
 // grab the database models
-var Dish = require('./models/dish');
-var Order = require('./models/order');
+var Customer = require('./models/customer');
 var User = require('./models/user');
+var Category = require('./models/category');
+var MenuItem = require('./models/menuItem');
+var OrderItem = require('./models/orderItem');
+var Order = require('./models/order');
 
 var tempCount = 0;
 
@@ -14,18 +17,49 @@ module.exports = function(app, router) {
     // handle things like api calls
     // authentication routes
 
-    router.get('/dishes', function(req, res) {
-        // use mongoose to get all dishes in the database
-        Dish.find(function(err, dishes) {
-            // if there is an error retrieving, send the error. 
+
+    // get all menu categories
+    router.get('/categories', function(req, res) {
+        Category.find(function(err, categories) {
             // nothing after res.send(err) will execute
             if (err){
                 res.send(err);
             }
-            res.json({dishes : dishes});
+            res.json({categories : categories});
         });
     });
 
+    // get all menu customers
+    router.get('/customers', function(req, res) {
+        Customer.find(function(err, customers) {
+            if (err){
+                res.send(err);
+            }
+            res.json({customers : customers});
+        });
+    });
+
+    // get all users
+    router.get('/users', function(req, res) {
+        User.find(function(err, users) {
+            if (err){
+                res.send(err);
+            }
+            res.json({users : users});
+        });
+    });
+
+    // get all menu items
+    router.get('/menuItems', function(req, res) {
+        MenuItem.find(function(err, menuItems) {
+            if (err){
+                res.send(err);
+            }
+            res.json({menuItems : menuItems});
+        });
+    });
+
+    // get all orders
     router.get('/orders', function(req, res) {
         Order.find(function(err, orders) {
             if (err){
@@ -36,29 +70,53 @@ module.exports = function(app, router) {
     });
 
 
-    router.get('/users', function(req, res) {
-        User.find(function(err, users) {
-            if (err){
-                res.send(err);
-            }
-            res.json({users : users});
-        });
-    });
+
 
     // route to handle creating goes here (app.post)
-    router.post('/dishes', function(req, res) {
+    router.post('/menuItems', function(req, res) {
 
-        console.log(req)
         tempCount++;
-        var dish = new Dish({'name' : 'Chicken-'+tempCount})
-        dish.save(function (err) {
+        var menuItem = new MenuItem({
+            name        : 'Chicken-'+tempCount,
+            price       : 10,
+            description : 'Chicken-'+tempCount+' is good',
+            category    : 'CURRY',
+            daysofweek  : ['MON', 'TUE', 'THU'],
+            img         : 'butterChicken.jpg'
+        })
+
+        menuItem.save(function (err) {
             if (err) {
                 console.log(err);
             }else{
-                res.send("Dish Jay"+tempCount+" added");
+                res.send("Menu Item Chicken-"+tempCount+" added");
             }
         })
     })
+
+    // FAKE DATA GET
+    // route to handle creating goes here (app.post)
+    router.get('/addFakeMenuItems', function(req, res) {
+
+        tempCount++;
+        var menuItem = new MenuItem({
+            name        : 'Chicken-'+tempCount,
+            price       : 10,
+            description : 'Chicken-'+tempCount+' is good',
+            category    : 'CURRY',
+            daysofweek  : ['MON', 'TUE', 'THU'],
+            img         : 'butterChicken.jpg'
+        })
+
+        menuItem.save(function (err) {
+            if (err) {
+                console.log(err);
+            }else{
+                res.send("Menu Item Chicken-"+tempCount+" added");
+            }
+        })
+    })
+
 
     // route to handle delete goes here (app.delete)
 
