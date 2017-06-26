@@ -28,11 +28,17 @@
                                 </div>
                             </md-toolbar>
 
-                            <md-card-content>
-                                <md-list flex>
+                            <md-card-content layout="row" layout-align="space-between center">
+                                <md-list flex-gt-xs="">
                                     <md-list-item ng-repeat="dish in day.dishes" ng-click="selectDish(dish)" class="noright">
-                                        <img alt="{{ dish.name }}" ng-src="{{ dish.image }}" class="md-avatar" />
-                                        <p>{{ dish.name }}</p>
+                                        <md-card>
+                                            <img ng-src="{{dish.image}}" class="md-card-image" alt="Washed Out">
+                                            <md-card-title>
+                                                <md-card-title-text>
+                                                    <span class="md-headline">{{ dish.name }}</span>
+                                                </md-card-title-text>
+                                            </md-card-title>
+                                        </md-card>
                                     </md-list-item>
                                 </md-list>
                             </md-card-content>
