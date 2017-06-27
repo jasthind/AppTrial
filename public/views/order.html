@@ -1,62 +1,56 @@
-<div ng-controller="orderController" ng-cloak="" layout-gt-sm="row" layout="column" ng-app="MyApp">
-    <div flex="">
-        <md-card >
-            <md-card-content>
-                <md-content class="md-no-momentum">
-                    <md-list flex="">
-                        <md-subheader class="md-no-sticky">Curry</md-subheader>
-                        <md-list-item ng-repeat="curry in curries">
-                            <p> {{ curry.name }} </p>
-                            <md-checkbox class="md-secondary" ng-model="curry.selected"></md-checkbox>
-                        </md-list-item>
-                    </md-list>
-
-                </md-content>
+<div ng-cloak>
+    <md-content>
+        <md-toolbar layout="row" class="md-accent">
+            <div class="md-toolbar-tools">
+                <span>Your Order</span>
+            </div>
+        </md-toolbar>
+        <md-card>
+            <img ng-src='img/menu/butterChicken.jpg' class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text layout="row" layout-align="space-between center">
+                    <span class="md-headline">Butter Chicken</span>
+                    <span class="md-headline">$ 8</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between center">
+                <div>Includes:  1 Naan and Rice</div>
             </md-card-content>
         </md-card>
-        <md-card >
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" style="color:rgb(255,64,129)">Choose your side</span>
+                </md-card-title-text>
+            </md-card-title>
             <md-card-content>
-                <md-content class="md-no-momentum">
-                    <md-list flex="">
-                        <md-subheader class="md-no-sticky">Side</md-subheader>
-                        <md-list-item ng-repeat="side in sides">
-                            <p> {{ side.name }} </p>
-                            <md-checkbox class="md-secondary" ng-model="side.selected"></md-checkbox>
-                        </md-list-item>
-                    </md-list>
-
-                </md-content>
+                <md-list flex="">
+                    <md-list-item ng-repeat="side in sides">
+                        <md-checkbox ng-model="side.selected"></md-checkbox>
+                        <p>{{ side.name }}</p>
+                        <p class="md-secondary">$1</p>
+                    </md-list-item>
+                </md-list>
             </md-card-content>
         </md-card>
-    </div>
-
-    <div flex="">
-        <md-card >
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" style="color:rgb(255,64,129)">Choose your Drink</span>
+                </md-card-title-text>
+            </md-card-title>
             <md-card-content>
-                <md-content class="md-no-momentum">
-                    <md-list class="md-dense" flex="">
-                        <md-subheader class="md-no-sticky">Main</md-subheader>
-                        <md-list-item ng-repeat="main in mains">
-                            <p> {{ main.name }} </p>
-                            <md-checkbox class="md-secondary" ng-model="main.selected"></md-checkbox>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
+                <md-list flex="">
+                    <md-list-item ng-repeat="drink in drinks">
+                        <md-checkbox ng-model="drink.selected"></md-checkbox>
+                        <p>{{ drink.name }}</p>
+                        <p class="md-secondary">$1</p>
+                    </md-list-item>
+                </md-list>
             </md-card-content>
         </md-card>
-        <md-card >
-            <md-card-content>
-                <md-content class="md-no-momentum">
-                    <md-list class="md-dense" flex="">
-                        <md-subheader class="md-no-sticky">Drink</md-subheader>
-                        <md-list-item ng-repeat="drink in drinks">
-                            <p> {{ drink.name }} </p>
-                            <md-checkbox class="md-secondary" ng-model="drink.selected"></md-checkbox>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-            </md-card-content>
-        </md-card>
-    </div>
-
+        <div layout="row" >
+            <md-button flex="grow" class="md-raised md-accent" >Place Order</md-button>
+        </div>
+    </md-content>
 </div>

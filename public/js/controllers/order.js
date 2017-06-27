@@ -17,8 +17,7 @@ function orderController($scope, loginService, $state) {
         { name: 'Naan', selected: false }
     ];
     $scope.sides = [
-        { name: 'Salad', selected: false },
-        { name: 'Samosa', selected: false }
+        { name: 'Salad', selected: false }
     ];
     $scope.drinks = [
         { name: 'Coke', selected: false },
