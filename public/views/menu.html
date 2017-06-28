@@ -19,7 +19,7 @@
                 </md-content>
             </md-tab>
             <md-tab label="Days">
-                <md-content class="md-padding" layout-gt-lg="row" layout="column">
+                <md-content class="md-padding" layout-gt-md="row" layout="column">
                     <div flex ng-repeat="day in days">
                         <md-card>
                             <md-toolbar layout="row" class="md-accent">
@@ -27,7 +27,6 @@
                                     <span>{{day.name}}</span>
                                 </div>
                             </md-toolbar>
-
                             <md-card-content layout="row" layout-align="space-between center">
                                 <md-list flex-gt-xs="">
                                     <md-list-item ng-repeat="dish in day.dishes" ng-click="selectDish(dish)" class="noright">
