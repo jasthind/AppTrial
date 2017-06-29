@@ -3,7 +3,7 @@ angular
     .module('app')
     .controller('orderController', orderController);
 
-orderController.$inject = ['$scope','loginService'];
+orderController.$inject = ['$scope','loginService', '$state'];
 
 function orderController($scope, loginService, $state) {
     $scope.curries = [
@@ -25,4 +25,12 @@ function orderController($scope, loginService, $state) {
         { name: 'Sprite', selected: false },
         { name: 'Iced Tea', selected: false }
     ];
+
+    $scope.backToMenu = function backToMenu() {
+        $state.go('menu');
+    };
+
+    $scope.checkout = function checkout() {
+        console.log('Checking Out ..')
+    };
 }
