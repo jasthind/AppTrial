@@ -2,13 +2,13 @@
     <md-content>
         <md-tabs md-dynamic-height md-border-bottom class="md-accent">
             <md-tab label="Dishes">
-                <md-content class="md-padding" layout-gt-md="row" layout="column">
+                <md-content class="md-padding" layout-gt-sm="row" layout="column">
                     <div flex ng-repeat="dish in dishes">
                         <md-card>
                             <img ng-src={{dish.image}} class="md-card-image" alt="Washed Out">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-headline" style="text-align: center">{{dish.name}}</span>
+                                    <span style="text-align: center">{{dish.name}}</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="space-around center">
@@ -27,14 +27,14 @@
                                     <span>{{day.name}}</span>
                                 </div>
                             </md-toolbar>
-                            <md-card-content layout="row" layout-align="space-between center">
+                            <md-card-content layout-xs="row" layout="column" layout-align="space-between center">
                                 <md-list flex-gt-xs="">
                                     <md-list-item ng-repeat="dish in day.dishes" ng-click="selectDish(dish)" class="noright">
                                         <md-card>
                                             <img ng-src="{{dish.image}}" class="md-card-image" alt="Washed Out">
                                             <md-card-title>
                                                 <md-card-title-text>
-                                                    <span class="md-headline">{{ dish.name }}</span>
+                                                    <span >{{ dish.name }}</span>
                                                 </md-card-title-text>
                                             </md-card-title>
                                         </md-card>

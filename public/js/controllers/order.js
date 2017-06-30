@@ -8,7 +8,7 @@ orderController.$inject = ['$scope','loginService'];
 function orderController($scope, loginService, $state) {
     $scope.curries = [
         { name: 'Butter Chicken', selected: false },
-        { name: 'Paneer Butter Masala', selected: false },
+        { name: 'Paneer Masala', selected: false },
         { name: 'Rajma', selected: false },
         { name: 'Chicken Curry', selected: false }
     ];

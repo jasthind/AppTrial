@@ -10,12 +10,12 @@ function menuController($scope, loginService, $state) {
         {
             name: 'Butter Chicken',
             image:'img/menu/butterChicken.jpg',
-            days: ['Mon', 'Tues']
+            days: ['Mon', 'Tue']
         },
         {
             name: 'Chicken Tikka',
             image:'img/menu/chickenTikka.jpg',
-            days: ['Wed', 'Thurs']
+            days: ['Wed', 'Thu']
         },
         {
             name: 'Tandoori Chicken',
@@ -23,7 +23,7 @@ function menuController($scope, loginService, $state) {
             days: ['Fri']
         },
         {
-            name: 'Paneer Butter Masala',
+            name: 'Paneer Masala',
             image:'img/menu/paneerButterMasala.jpg',
             days: ['Mon', 'Wed']
         }
@@ -34,7 +34,7 @@ function menuController($scope, loginService, $state) {
             name: 'Monday',
             dishes: [
                 {name:'Butter Chicken', image: 'img/menu/butterChicken.jpg'},
-                {name:'Paneer Butter Masala', image: 'img/menu/paneerButterMasala.jpg'}
+                {name:'Paneer Masala', image: 'img/menu/paneerButterMasala.jpg'}
             ]
         },
         {
@@ -47,7 +47,7 @@ function menuController($scope, loginService, $state) {
             name: 'Wednesday',
             dishes: [
                 {name:'Chicken Tikka', image: 'img/menu/chickenTikka.jpg'},
-                {name:'Paneer Butter Masala', image: 'img/menu/paneerButterMasala.jpg'}
+                {name:'Paneer Masala', image: 'img/menu/paneerButterMasala.jpg'}
             ]
         },
         {
