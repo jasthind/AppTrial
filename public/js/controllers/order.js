@@ -3,9 +3,9 @@ angular
     .module('app')
     .controller('orderController', orderController);
 
-orderController.$inject = ['$scope','loginService', '$state'];
+orderController.$inject = ['$scope','loginService', '$state', '$http'];
 
-function orderController($scope, loginService, $state) {
+function orderController($scope, loginService, $state, $http) {
     $scope.curries = [
         { name: 'Butter Chicken', selected: false },
         { name: 'Paneer Butter Masala', selected: false },
@@ -32,5 +32,6 @@ function orderController($scope, loginService, $state) {
 
     $scope.checkout = function checkout() {
         console.log('Checking Out ..')
+        console.log($http.get('/api/locations'))
     };
 }

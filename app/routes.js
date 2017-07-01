@@ -8,6 +8,7 @@ var Category = require('./models/category');
 var MenuItem = require('./models/menuItem');
 var OrderItem = require('./models/orderItem');
 var Order = require('./models/order');
+var Checkout = require('../thirdparty/checkout');
 
 var tempCount = 0;
 
@@ -67,6 +68,13 @@ module.exports = function(app, router) {
             }
             res.json({orders : orders});
         });
+    });
+
+    // Square endpoints
+    // get all locations
+    router.get('/locations', function(req, res) {
+        Checkout.getLocations(req,res)
+        //res.json();
     });
 
 
